@@ -45,5 +45,15 @@ class PropertySpec : XCTestCase {
 		property("Existential Quantification works") <- exists { (x : Int) in
 			return true
 		}
+
+		property("within works") <- forAllNoShrink(Int.arbitrary) { (_ : Int) in
+			sleep(1)
+			return true
+		}.within(1000).once.expectFailure
+
+		property("within works") <- forAllNoShrink(Int.arbitrary) { (_ : Int) in
+			sleep(1)
+			return true
+		}.within(1500000).once
 	}
 }

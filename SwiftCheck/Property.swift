@@ -50,7 +50,27 @@ public func conjamb(ps : () -> Testable...) -> Property {
 	return Property(Gen.oneOf(ls))
 }
 
+import Darwin
+
 extension Testable {
+	/// Considers a property failed if it does not complete within the given number of microseconds.
+	public func within(n : UInt) -> Property {
+		func withinF(n : UInt)(rose : Rose<TestResult>) -> Rose<TestResult> {
+			return .IORose({
+				if let res = timeout(n, block: reduce(rose)) {
+					switch res {
+					case .IORose(_):
+						fatalError("Rose should not have reduced to .IORose")
+					case let .MkRose(res, roses):
+						return .MkRose(res, { roses().map(withinF(n)) })
+					}
+				}
+				return Rose.pure(TestResult.failed("Property did not complete before timeout (\(n) µs)"))
+			})
+		}
+		return self.mapRoseResult(withinF(n))
+	}
+
 	/// Applies a function that modifies the property generator's inner `Prop`.
 	public func mapProp(f : Prop -> Prop) -> Property {
 		return Property(f <^> self.property.unProperty)
@@ -495,6 +515,20 @@ private func addLabels(result : TestResult) -> TestResult -> TestResult {
 						, abort:        res.abort
 						, quantifier:	res.quantifier)
 	}
+}
+
+private func timeout<A>(t : UInt, @autoclosure(escaping) block : () -> A) -> Optional<A> {
+	let start = mach_absolute_time();
+	let val = block()
+	let stop = mach_absolute_time();
+
+	var info = mach_timebase_info_data_t()
+	if mach_timebase_info(&info) != KERN_SUCCESS {
+		fatalError("Fatal: In call to timeout(), Mach could not provide timebase info.")
+	}
+
+	let delta = UInt(((Double(stop - start) / 1000.0) * Double(info.numer / info.denom)))
+	return (delta < t) ? val : nil
 }
 
 private func conj(k : TestResult -> TestResult, xs : [Rose<TestResult>]) -> Rose<TestResult> {
