@@ -99,6 +99,30 @@
 		828B7C8A1DEF58CF0066A994 /* FormatterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828B7C861DEF575C0066A994 /* FormatterSpec.swift */; };
 		828B7C8B1DEF58D00066A994 /* FormatterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828B7C861DEF575C0066A994 /* FormatterSpec.swift */; };
 		828B7C8C1DEF58D10066A994 /* FormatterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828B7C861DEF575C0066A994 /* FormatterSpec.swift */; };
+		829A4C1A1D94489600267E90 /* Generate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A4C191D94489600267E90 /* Generate.swift */; };
+		829A4C1B1D94489600267E90 /* Generate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A4C191D94489600267E90 /* Generate.swift */; };
+		829A4C1C1D94489600267E90 /* Generate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A4C191D94489600267E90 /* Generate.swift */; };
+		829A4C1E1D944A6200267E90 /* Signature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A4C1D1D944A6200267E90 /* Signature.swift */; };
+		829A4C1F1D944A6200267E90 /* Signature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A4C1D1D944A6200267E90 /* Signature.swift */; };
+		829A4C201D944A6200267E90 /* Signature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A4C1D1D944A6200267E90 /* Signature.swift */; };
+		82AA545E1D9419EF00F13E29 /* Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA545D1D9419EF00F13E29 /* Spec.swift */; };
+		82AA545F1D9419EF00F13E29 /* Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA545D1D9419EF00F13E29 /* Spec.swift */; };
+		82AA54601D9419EF00F13E29 /* Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA545D1D9419EF00F13E29 /* Spec.swift */; };
+		82AA54621D9425C100F13E29 /* TypeMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA54611D9425C100F13E29 /* TypeMap.swift */; };
+		82AA54631D9425C100F13E29 /* TypeMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA54611D9425C100F13E29 /* TypeMap.swift */; };
+		82AA54641D9425C100F13E29 /* TypeMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA54611D9425C100F13E29 /* TypeMap.swift */; };
+		82AA54661D942EF400F13E29 /* EquationalReasoning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA54651D942EF400F13E29 /* EquationalReasoning.swift */; };
+		82AA54671D942EF400F13E29 /* EquationalReasoning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA54651D942EF400F13E29 /* EquationalReasoning.swift */; };
+		82AA54681D942EF400F13E29 /* EquationalReasoning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA54651D942EF400F13E29 /* EquationalReasoning.swift */; };
+		82AA546A1D94325700F13E29 /* UnionFind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA54691D94325700F13E29 /* UnionFind.swift */; };
+		82AA546B1D94325700F13E29 /* UnionFind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA54691D94325700F13E29 /* UnionFind.swift */; };
+		82AA546C1D94325700F13E29 /* UnionFind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA54691D94325700F13E29 /* UnionFind.swift */; };
+		82AA546E1D943B8A00F13E29 /* Detritus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA546D1D943B8A00F13E29 /* Detritus.swift */; };
+		82AA546F1D943B8A00F13E29 /* Detritus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA546D1D943B8A00F13E29 /* Detritus.swift */; };
+		82AA54701D943B8A00F13E29 /* Detritus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA546D1D943B8A00F13E29 /* Detritus.swift */; };
+		82AA54721D943DFF00F13E29 /* CongruenceClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA54711D943DFF00F13E29 /* CongruenceClosure.swift */; };
+		82AA54731D943DFF00F13E29 /* CongruenceClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA54711D943DFF00F13E29 /* CongruenceClosure.swift */; };
+		82AA54741D943DFF00F13E29 /* CongruenceClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA54711D943DFF00F13E29 /* CongruenceClosure.swift */; };
 		82BA08CF1D6FFBD20068D32F /* Compose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BA08CE1D6FFBD20068D32F /* Compose.swift */; };
 		82BA08D01D6FFBD20068D32F /* Compose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BA08CE1D6FFBD20068D32F /* Compose.swift */; };
 		82BA08D11D6FFBD20068D32F /* Compose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BA08CE1D6FFBD20068D32F /* Compose.swift */; };
@@ -196,6 +220,14 @@
 		826D81571C953D070022266C /* WitnessedArbitrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WitnessedArbitrary.swift; path = Sources/WitnessedArbitrary.swift; sourceTree = SOURCE_ROOT; };
 		826D81C61C953D350022266C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = SOURCE_ROOT; };
 		828B7C861DEF575C0066A994 /* FormatterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormatterSpec.swift; path = Tests/SwiftCheckTests/FormatterSpec.swift; sourceTree = SOURCE_ROOT; };
+		829A4C191D94489600267E90 /* Generate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Generate.swift; path = Sources/Generate.swift; sourceTree = SOURCE_ROOT; };
+		829A4C1D1D944A6200267E90 /* Signature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Signature.swift; path = Sources/Signature.swift; sourceTree = SOURCE_ROOT; };
+		82AA545D1D9419EF00F13E29 /* Spec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Spec.swift; path = Sources/Spec.swift; sourceTree = SOURCE_ROOT; };
+		82AA54611D9425C100F13E29 /* TypeMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypeMap.swift; path = Sources/TypeMap.swift; sourceTree = SOURCE_ROOT; };
+		82AA54651D942EF400F13E29 /* EquationalReasoning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EquationalReasoning.swift; path = Sources/EquationalReasoning.swift; sourceTree = SOURCE_ROOT; };
+		82AA54691D94325700F13E29 /* UnionFind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnionFind.swift; path = Sources/UnionFind.swift; sourceTree = SOURCE_ROOT; };
+		82AA546D1D943B8A00F13E29 /* Detritus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Detritus.swift; path = Sources/Detritus.swift; sourceTree = SOURCE_ROOT; };
+		82AA54711D943DFF00F13E29 /* CongruenceClosure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CongruenceClosure.swift; path = Sources/CongruenceClosure.swift; sourceTree = SOURCE_ROOT; };
 		82BA08CE1D6FFBD20068D32F /* Compose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Compose.swift; path = Sources/Compose.swift; sourceTree = SOURCE_ROOT; };
 		844FCC8D198B320500EB242A /* SwiftCheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftCheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		844FCC98198B320500EB242A /* SwiftCheckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCheckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -299,6 +331,14 @@
 				826D81541C953D070022266C /* Testable.swift */,
 				826D81561C953D070022266C /* Witness.swift */,
 				826D81571C953D070022266C /* WitnessedArbitrary.swift */,
+				82AA545D1D9419EF00F13E29 /* Spec.swift */,
+				829A4C191D94489600267E90 /* Generate.swift */,
+				82AA54651D942EF400F13E29 /* EquationalReasoning.swift */,
+				82AA54691D94325700F13E29 /* UnionFind.swift */,
+				82AA54711D943DFF00F13E29 /* CongruenceClosure.swift */,
+				82AA546D1D943B8A00F13E29 /* Detritus.swift */,
+				829A4C1D1D944A6200267E90 /* Signature.swift */,
+				82AA54611D9425C100F13E29 /* TypeMap.swift */,
 				844FCC90198B320500EB242A /* Supporting Files */,
 			);
 			path = SwiftCheck;
@@ -620,20 +660,28 @@
 			files = (
 				826D81721C953D070022266C /* Property.swift in Sources */,
 				826D81691C953D070022266C /* Lattice.swift in Sources */,
+				82AA54641D9425C100F13E29 /* TypeMap.swift in Sources */,
 				826D81751C953D070022266C /* Random.swift in Sources */,
 				826D81841C953D070022266C /* Testable.swift in Sources */,
+				82AA54601D9419EF00F13E29 /* Spec.swift in Sources */,
 				FAAB9E8B1D91C28F0097AC78 /* Cartesian.swift in Sources */,
 				826D818A1C953D070022266C /* Witness.swift in Sources */,
+				82AA54681D942EF400F13E29 /* EquationalReasoning.swift in Sources */,
 				826D815A1C953D070022266C /* Arbitrary.swift in Sources */,
 				826D816C1C953D070022266C /* Modifiers.swift in Sources */,
 				826D81811C953D070022266C /* Test.swift in Sources */,
+				829A4C201D944A6200267E90 /* Signature.swift in Sources */,
+				82AA54741D943DFF00F13E29 /* CongruenceClosure.swift in Sources */,
+				82AA546C1D94325700F13E29 /* UnionFind.swift in Sources */,
 				826D81871C953D070022266C /* Check.swift in Sources */,
 				826D81781C953D070022266C /* Rose.swift in Sources */,
 				826D81601C953D070022266C /* CoArbitrary.swift in Sources */,
+				829A4C1C1D94489600267E90 /* Generate.swift in Sources */,
 				826D81631C953D070022266C /* Gen.swift in Sources */,
 				826D818D1C953D070022266C /* WitnessedArbitrary.swift in Sources */,
 				82BA08D11D6FFBD20068D32F /* Compose.swift in Sources */,
 				826D817B1C953D070022266C /* State.swift in Sources */,
+				82AA54701D943B8A00F13E29 /* Detritus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,20 +714,28 @@
 			files = (
 				826D81701C953D070022266C /* Property.swift in Sources */,
 				826D81671C953D070022266C /* Lattice.swift in Sources */,
+				82AA54621D9425C100F13E29 /* TypeMap.swift in Sources */,
 				826D81731C953D070022266C /* Random.swift in Sources */,
 				826D81821C953D070022266C /* Testable.swift in Sources */,
+				82AA545E1D9419EF00F13E29 /* Spec.swift in Sources */,
 				FAAB9E891D91C28F0097AC78 /* Cartesian.swift in Sources */,
 				826D81881C953D070022266C /* Witness.swift in Sources */,
+				82AA54661D942EF400F13E29 /* EquationalReasoning.swift in Sources */,
 				826D81581C953D070022266C /* Arbitrary.swift in Sources */,
 				826D816A1C953D070022266C /* Modifiers.swift in Sources */,
 				826D817F1C953D070022266C /* Test.swift in Sources */,
+				829A4C1E1D944A6200267E90 /* Signature.swift in Sources */,
+				82AA54721D943DFF00F13E29 /* CongruenceClosure.swift in Sources */,
+				82AA546A1D94325700F13E29 /* UnionFind.swift in Sources */,
 				826D81851C953D070022266C /* Check.swift in Sources */,
 				826D81761C953D070022266C /* Rose.swift in Sources */,
 				826D815E1C953D070022266C /* CoArbitrary.swift in Sources */,
+				829A4C1A1D94489600267E90 /* Generate.swift in Sources */,
 				826D81611C953D070022266C /* Gen.swift in Sources */,
 				826D818B1C953D070022266C /* WitnessedArbitrary.swift in Sources */,
 				82BA08CF1D6FFBD20068D32F /* Compose.swift in Sources */,
 				826D81791C953D070022266C /* State.swift in Sources */,
+				82AA546E1D943B8A00F13E29 /* Detritus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,20 +768,28 @@
 			files = (
 				826D81711C953D070022266C /* Property.swift in Sources */,
 				826D81681C953D070022266C /* Lattice.swift in Sources */,
+				82AA54631D9425C100F13E29 /* TypeMap.swift in Sources */,
 				826D81741C953D070022266C /* Random.swift in Sources */,
 				826D81831C953D070022266C /* Testable.swift in Sources */,
+				82AA545F1D9419EF00F13E29 /* Spec.swift in Sources */,
 				FAAB9E8A1D91C28F0097AC78 /* Cartesian.swift in Sources */,
 				826D81891C953D070022266C /* Witness.swift in Sources */,
+				82AA54671D942EF400F13E29 /* EquationalReasoning.swift in Sources */,
 				826D81591C953D070022266C /* Arbitrary.swift in Sources */,
 				826D816B1C953D070022266C /* Modifiers.swift in Sources */,
 				826D81801C953D070022266C /* Test.swift in Sources */,
+				829A4C1F1D944A6200267E90 /* Signature.swift in Sources */,
+				82AA54731D943DFF00F13E29 /* CongruenceClosure.swift in Sources */,
+				82AA546B1D94325700F13E29 /* UnionFind.swift in Sources */,
 				826D81861C953D070022266C /* Check.swift in Sources */,
 				826D81771C953D070022266C /* Rose.swift in Sources */,
 				826D815F1C953D070022266C /* CoArbitrary.swift in Sources */,
+				829A4C1B1D94489600267E90 /* Generate.swift in Sources */,
 				826D81621C953D070022266C /* Gen.swift in Sources */,
 				826D818C1C953D070022266C /* WitnessedArbitrary.swift in Sources */,
 				82BA08D01D6FFBD20068D32F /* Compose.swift in Sources */,
 				826D817A1C953D070022266C /* State.swift in Sources */,
+				82AA546F1D943B8A00F13E29 /* Detritus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
