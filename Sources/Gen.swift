@@ -44,8 +44,8 @@ public struct Gen<A> {
 	/// collection and produces only that value.
 	///
 	/// The input collection is required to be non-empty.
-	public static func fromElements<S : Collection>(of xs : S) -> Gen<S._Element>
-		where S.Index : Comparable & RandomType
+	public static func fromElements<S : Collection>(of xs : S) -> Gen<S.Element>
+		where S.Index : RandomType
 	{
 		return Gen.fromElements(in: xs.startIndex...xs.index(xs.endIndex, offsetBy: -1)).map { i in
 			return xs[i]
@@ -120,7 +120,7 @@ public struct Gen<A> {
 	/// If control over the distribution of generators is needed, see
 	/// `Gen.frequency` or `Gen.weighted`.
 	public static func one<S : BidirectionalCollection>(of gs : S) -> Gen<A>
-		where S.Iterator.Element == Gen<A>, S.Index : RandomType & Comparable
+		where S.Iterator.Element == Gen<A>, S.Index : RandomType
 	{
 		assert(gs.count != 0, "oneOf used with empty list")
 
@@ -183,7 +183,7 @@ extension Gen {
 
 extension Gen {
 	/// Shakes up the generator's internal Random Number Generator with a seed.
-	public func variant<S : Integer>(_ seed : S) -> Gen<A> {
+	public func variant<S : BinaryInteger>(_ seed : S) -> Gen<A> {
 		return Gen(unGen: { rng, n in
 			return self.unGen(vary(seed, rng), n)
 		})
@@ -277,8 +277,8 @@ extension Gen {
 
 extension Gen {
 	@available(*, unavailable, renamed: "fromElements(of:)")
-	public static func fromElementsOf<S : Collection>(_ xs : S) -> Gen<S._Element>
-		where S.Index : Comparable & RandomType
+	public static func fromElementsOf<S : Collection>(_ xs : S) -> Gen<S.Element>
+		where S.Index : RandomType
 	{
 		return Gen.fromElements(of: xs)
 	}
@@ -302,7 +302,7 @@ extension Gen {
 
 	@available(*, unavailable, renamed: "one(of:)")
 	public static func oneOf<S : BidirectionalCollection>(_ gs : S) -> Gen<A>
-		where S.Iterator.Element == Gen<A>, S.Index : RandomType & Comparable
+		where S.Iterator.Element == Gen<A>, S.Index : RandomType
 	{
 		return Gen.one(of: gs)
 	}
@@ -334,7 +334,7 @@ extension Gen /*: Functor*/ {
 extension Gen /*: Applicative*/ {
 	/// Lifts a value into a generator that will only generate that value.
 	public static func pure(_ a : A) -> Gen<A> {
-		return Gen(unGen: { _ in
+		return Gen(unGen: { _,_  in
 			return a
 		})
 	}
@@ -423,15 +423,15 @@ private func delay<A>() -> Gen<(Gen<A>) -> A> {
 	})
 }
 
-private func vary<S : Integer>(_ k : S, _ rng : StdGen) -> StdGen {
+private func vary<S : BinaryInteger>(_ k : S, _ rng : StdGen) -> StdGen {
 	let s = rng.split
 	let gen = ((k % 2) == 0) ? s.0 : s.1
 	return (k == (k / 2)) ? gen : vary(k / 2, rng)
 }
 
-private func size<S : Integer>(_ k : S, _ m : Int) -> Int {
+private func size<S : BinaryInteger>(_ k : S, _ m : Int) -> Int {
 	let n = Double(m)
-	return Int((log(n + 1)) * Double(k.toIntMax()) / log(100))
+	return Int((log(n + 1)) * Double(Int64(k)) / log(100))
 }
 
 private func selectOne<A>(_ xs : [A]) -> [(A, [A])] {

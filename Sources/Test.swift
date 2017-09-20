@@ -598,7 +598,7 @@ internal func quickCheckWithResult(_ args : CheckerArguments, _ p : Testable) ->
 		name:                         args.name,
 		maxAllowableSuccessfulTests:  args.maxAllowableSuccessfulTests,
 		maxAllowableDiscardedTests:   args.maxAllowableDiscardedTests,
-		computeSize:                  { computeSize(args, vals: $0) },
+		computeSize:                  { computeSize(args, vals: (successes: $0, discards: $1)) },
 		successfulTestCount:          0,
 		discardedTestCount:           0,
 		labels:                       [:],

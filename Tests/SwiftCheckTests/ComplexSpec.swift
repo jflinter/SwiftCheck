@@ -43,7 +43,9 @@ class ComplexSpec : XCTestCase {
 			/// CHECKEMAIL: *** Passed 1 test
 			/// CHECKEMAIL-NEXT: .
 			property("Generated email addresses contain 1 @", arguments: args) <- forAll(emailGen) { (e : String) in
-				return e.characters.filter({ $0 == "@" }).count == 1
+				return e.characters.filter({ (c: Character) -> Bool in
+					c == "@"
+				}).count == 1
 			}.once
 		})
 	}
@@ -67,7 +69,9 @@ class ComplexSpec : XCTestCase {
 			/// CHECKIPV6: *** Passed 100 tests
 			/// CHECKIPV6-NEXT: .
 			property("Generated IPs contain 3 sections") <- forAll(ipGen) { (e : String) in
-				return e.characters.filter({ $0 == ":" }).count == 3
+				return e.characters.filter({ (c: Character) -> Bool in
+					c == ":"
+				}).count == 3
 			}
 		})
 	}
@@ -88,6 +92,6 @@ func glue(_ parts : [Gen<String>]) -> Gen<String> {
 
 extension String {
 	fileprivate var initial : String {
-		return self[self.startIndex..<self.characters.index(before: self.endIndex)]
+		return String(self[self.startIndex..<self.characters.index(before: self.endIndex)])
 	}
 }

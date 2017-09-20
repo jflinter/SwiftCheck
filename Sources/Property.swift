@@ -161,7 +161,7 @@ extension Testable {
 	///
 	/// - returns: A `Property` that prints the counterexample value on failure.
 	public func counterexample(_ example : String) -> Property {
-		return self.withCallback(Callback.afterFinalFailure(kind: .counterexample) { _ in
+		return self.withCallback(Callback.afterFinalFailure(kind: .counterexample) { _,_  in
 			return print(example)
 		})
 	}
@@ -173,7 +173,7 @@ extension Testable {
 	///
 	/// - returns: A `Property` that executes the given callback block on failure.
 	public func whenFail(_ callback : @escaping () -> ()) -> Property {
-		return self.withCallback(Callback.afterFinalFailure(kind: .notCounterexample) { _ in
+		return self.withCallback(Callback.afterFinalFailure(kind: .notCounterexample) { _,_  in
 			return callback()
 		})
 	}
@@ -597,7 +597,7 @@ private func protectResult(_ r : @escaping () throws -> TestResult) -> (() -> Te
 	return { protect(exception("Exception"), x: r) }
 }
 
-internal func unionWith<K : Hashable, V>(_ f : (V, V) -> V, l : Dictionary<K, V>, r : Dictionary<K, V>) -> Dictionary<K, V> {
+internal func unionWith<K, V>(_ f : (V, V) -> V, l : Dictionary<K, V>, r : Dictionary<K, V>) -> Dictionary<K, V> {
 	var map = l
 	r.forEach { (k, v) in
 		if let val = map.updateValue(v, forKey: k) {
@@ -607,7 +607,7 @@ internal func unionWith<K : Hashable, V>(_ f : (V, V) -> V, l : Dictionary<K, V>
 	return map
 }
 
-private func insertWith<K : Hashable, V>(_ f : (V, V) -> V, k : K, v : V, m : Dictionary<K, V>) -> Dictionary<K, V> {
+private func insertWith<K, V>(_ f : (V, V) -> V, k : K, v : V, m : Dictionary<K, V>) -> Dictionary<K, V> {
 	var res = m
 	let oldV = res[k]
 	if let existV = oldV {
@@ -733,7 +733,7 @@ private func disj(_ p : Rose<TestResult>, q : Rose<TestResult>) -> Rose<TestResu
 				case .some(true):
 					return Rose<TestResult>.pure(result2)
 				case .some(false):
-					let callbacks : [Callback] = [.afterFinalFailure(kind: .counterexample, { _ in return print("") })]
+					let callbacks : [Callback] = [.afterFinalFailure(kind: .counterexample, { _,_  in return print("") })]
 					return Rose<TestResult>.pure(TestResult(
 						ok:            .some(false),
 						expect:        true,

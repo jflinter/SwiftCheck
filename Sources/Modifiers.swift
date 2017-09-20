@@ -398,7 +398,7 @@ extension IsoOf : CustomReflectable {
 
 /// By default, SwiftCheck generates values drawn from a small range. `Large`
 /// gives you values drawn from the entire range instead.
-public struct Large<A : RandomType & LatticeType & Integer> : Arbitrary {
+public struct Large<A : RandomType & LatticeType & FixedWidthInteger> : Arbitrary {
 	/// Retrieves the underlying large value.
 	public let getLarge : A
 
@@ -424,7 +424,7 @@ public struct Large<A : RandomType & LatticeType & Integer> : Arbitrary {
 }
 
 /// Guarantees that every generated integer is greater than 0.
-public struct Positive<A : Arbitrary & SignedNumber> : Arbitrary, CustomStringConvertible {
+public struct Positive<A : Arbitrary & Comparable & SignedNumeric> : Arbitrary, CustomStringConvertible {
 	/// Retrieves the underlying positive value.
 	public let getPositive : A
 
@@ -458,7 +458,7 @@ extension Positive : CoArbitrary {
 }
 
 /// Guarantees that every generated integer is never 0.
-public struct NonZero<A : Arbitrary & Integer> : Arbitrary, CustomStringConvertible {
+public struct NonZero<A : Arbitrary & BinaryInteger> : Arbitrary, CustomStringConvertible {
 	/// Retrieves the underlying non-zero value.
 	public let getNonZero : A
 
@@ -491,7 +491,7 @@ extension NonZero : CoArbitrary {
 }
 
 /// Guarantees that every generated integer is greater than or equal to 0.
-public struct NonNegative<A : Arbitrary & Integer> : Arbitrary, CustomStringConvertible {
+public struct NonNegative<A : Arbitrary & BinaryInteger> : Arbitrary, CustomStringConvertible {
 	/// Retrieves the underlying non-negative value.
 	public let getNonNegative : A
 

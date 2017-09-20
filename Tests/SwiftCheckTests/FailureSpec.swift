@@ -54,7 +54,7 @@ class FailureSpec : XCTestCase {
 
 	/// h/t @robrix for the suggestion ~( https://github.com/antitypical/Assertions/blob/master/AssertionsTests/AssertionsTests.swift )
 	/// and @ishikawa for the idea ~( https://github.com/antitypical/Assertions/pull/3#issuecomment-76337761 )
-	override func recordFailure(withDescription message : String, inFile file : String, atLine line : UInt, expected : Bool) {
+	override func recordFailure(withDescription message : String, inFile file : String, atLine line : Int, expected : Bool) {
 		if !expected {
 			assert(false, "Assertion should never throw.")
 		} else {
